@@ -28,8 +28,8 @@ export interface TypeCard {
     image: string;
     description: string;
     attribute: string;
-    attack?: number;
-    defense?: number;
+    attack?: number | "?";
+    defense?: number | "?";
     typeClass: string;
     color: string;
     fontSizeDescription?: string;
@@ -149,5 +149,56 @@ export const cardsData:TypeCard[] = [
         attribute: Attribute.Spell,
         typeClass: Type.Spell,
         color: Color.Spell
+    },
+    {
+        start: 8,
+        name: "Elemental HERO Neos",
+        type: "Warrior",
+        image: "cards/elemental-hero-neos.jpeg",
+        description: "A new Elemental HERO has arrived from Neo-Space! When he initiates a Contact Fusion with a Neo-Spacian his unknown powers are unleashed",
+        attack: 2500,
+        defense: 2000,
+        attribute: Attribute.Light,
+        typeClass: Type.Normal,
+        color: Color.Normal
+    },
+    {
+        start: 10,
+        name: "Slifer The Sky Dragon",
+        type: "Divine-Beast",
+        image: "cards/slifer-the-sky-dragon.jpeg",
+        description: "Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY. Gains 1000 ATK/DEF for each card in your hand. If a monster(s) is Normal or Special Summoned to your opponent's field in Attack Position: That monster(s) loses 2000 ATK, then if its ATK has been reduced to 0 as a result, destroy it.",
+        attack: "?",
+        defense: "?",
+        attribute: Attribute.Light,
+        typeClass: Type.Effect,
+        color: Color.Effect,
+        fontSizeDescription: "10px"
+    },
+    {
+        start: 10,
+        name: "Obelisk The Tormentor",
+        type: "Divine-Beast",
+        image: "cards/obelisk-the-tormentor.jpeg",
+        description: "Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Neither player can target this card with card effects. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY. You can Tribute 2 monsters; destroy all monsters your opponent controls. This card cannot declare an attack the turn this effect is activated",
+        attack: 4000,
+        defense: 4000,
+        attribute: Attribute.Light,
+        typeClass: Type.Effect,
+        color: Color.Effect,
+        fontSizeDescription: "10px"
+    },
+    {
+        start: 10,
+        name: "The Winged Dragon of Ra",
+        type: "Divine-Beast",
+        image: "cards/the-winged-dragon-of-ra.jpeg",
+        description: "Cannot be Special Summoned. Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, other cards and effects cannot be activated. When this card is Normal Summoned: You can pay LP so that you only have 100 left; this card gains ATK/DEF equal to the amount of LP paid. You can pay 1000 LP, then target 1 monster on the field; destroy that target",
+        attack: "?",
+        defense: "?",
+        attribute: Attribute.Light,
+        typeClass: Type.Effect,
+        color: Color.Effect,
+        fontSizeDescription: "10px"
     }
 ]

@@ -9,6 +9,7 @@
   --dark-color: color-mix(in srgb, var(--color), black 50%);
   --category-gradient: linear-gradient(var(--dark-color), var(--color), var(--dark-color));
   --noise: url("cards/textures/noise.webp");
+  --bg-primary-url:url("/bg-primary.jpeg"), linear-gradient(#141414, #141414);
 
   
 }
@@ -16,6 +17,9 @@
 body {
   font-family: "Jost Variable", sans-serif;
   background: var(--bg-primary);
+  background-image: var(--bg-primary-url), linear-gradient(#141414, #141414);
+  background-blend-mode: overlay, normal;
+  background-clip: padding-box, border-box;
 }
 #root {
   display: flex;

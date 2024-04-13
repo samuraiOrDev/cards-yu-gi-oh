@@ -1,11 +1,12 @@
 
+
 import { Card } from "./components/Card"
-import "./css/Card.css"
 import { cardsData } from "./data/data"
+import "./css/Card.css"
+
 function App() {
   return (
     <>
-
       {
         cardsData.map((card, index) => (
           <Card
@@ -22,6 +23,7 @@ function App() {
             color={card.color}
             fontSizeDescription={card.fontSizeDescription}
           />
+
         ))
       }
     </>

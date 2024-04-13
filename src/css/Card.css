@@ -63,8 +63,9 @@
         }
     }
     header {
-        --shape: polygon(5% 0, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
-        --gradient: linear-gradient(to right, var(--color), #222 30%, #222 70%, var(--color) 100%);
+        /* --shape: polygon(5% 0, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%); */
+        /* --gradient: linear-gradient(to right, var(--color), #222 30%, #222 70%, var(--color) 100%); */
+        --gradient: linear-gradient(to right, var(--color),  var(--color) 100%);
         display: grid;
         place-items: center;
         width: 90%;
@@ -144,9 +145,6 @@
             }
         }
         &.description {
-            --gradient: linear-gradient(to right, var(--color), #fff5 15%, #fff 50%, var(--color) 85%, #222);
-            --shape: polygon(0 0, 100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%);
-            --opacity: 1;
             top: auto;
             bottom: 27%;
             & .text {
