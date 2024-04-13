@@ -1,0 +1,26 @@
+:root {
+  --bg-primary: #333;
+
+  --color: rgb(202 138 4);
+  --width: 390px;
+  --height: calc(var(--width) * 1.5); /* 550px */
+  --border-size: calc(var(--width) / 19.5); /* 20px */
+  
+  --dark-color: color-mix(in srgb, var(--color), black 50%);
+  --category-gradient: linear-gradient(var(--dark-color), var(--color), var(--dark-color));
+  --noise: url("cards/textures/noise.webp");
+
+  
+}
+
+body {
+  font-family: "Jost Variable", sans-serif;
+  background: var(--bg-primary);
+}
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
