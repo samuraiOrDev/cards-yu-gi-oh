@@ -1,34 +1,43 @@
 
-import { useEffect, useRef } from "react";
-import { Card } from "../components/Card";
-import { Header } from "../components/Header";
-import { cardsData } from "../data/data";
+import { useEffect, useRef, useState } from "react";
+import { Card, Header, SelectorClass } from "../components";
+import { Type, cardsData } from "../data/data";
 
 export default function Index() {
     const containerCardRef = useRef<HTMLDivElement>(null);
+    const [filteredCards, setFilteredCards] = useState(cardsData);
+
+
+    const handleCards = (value: string) =>
+        (value === Type.All)
+            ? setFilteredCards(cardsData)
+            : setFilteredCards(cardsData.filter(card => card.typeClass === value));
+
+
     useEffect(() => {
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                } else {
+                    entry.target.classList.remove('appear');
+                }
+            });
+        }, { threshold: 0.2 });
+
         if (containerCardRef.current) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    console.log(entry);
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('appear');
-                    } else {
-                        entry.target.classList.remove('appear');
-                    }
-                });
-            }, { threshold: 0.2 });
-            const cards = document.querySelectorAll('.card-container');
+            const cards = containerCardRef.current.querySelectorAll('.card-container');
             cards.forEach(card => observer.observe(card));
         }
-    }, [])
+    }, [filteredCards])
     return (
         <>
             <Header />
+            <SelectorClass handleCards={handleCards} />
             <div className="cards-yu-gi-oh" ref={containerCardRef}>
                 {
-                    cardsData.map((card, index) => (
+                    filteredCards.map((card, index) => (
                         <Card
                             key={index}
                             card={card}

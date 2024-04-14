@@ -1,4 +1,5 @@
-enum Color {
+export enum Color {
+    All = "darkgrey",
     Normal = "#b8a863",
     Effect = "#f17430",
     Ritual = "royalblue",
@@ -7,7 +8,8 @@ enum Color {
     Synchro = "#fff",
 
 }
-enum Type {
+export enum Type {
+    All = "All",
     Normal = "Normal",
     Effect = "Effect",
     Ritual = "Ritual",
@@ -16,7 +18,7 @@ enum Type {
     Synchro = "Synchro",
     SynchroEffect = "Synchro/Effect"
 }
-enum Attribute {
+export enum Attribute {
     Dark = "/cards/attributes/dark.png",
     Light = "/cards/attributes/light.png",
     Wind = "/cards/attributes/wind.png",

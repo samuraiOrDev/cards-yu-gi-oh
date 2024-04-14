@@ -31,6 +31,31 @@ body {
   gap: 2rem;
 }
 
+.selector-type-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 2rem;
+
+  & .item-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    background: transparent;
+    font-weight: 800;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    border: 1px solid var(--color);
+    color: var(--color);
+    font-size: 1.5rem;
+  
+  }
+}
+
 /* Animation */
 .appear {
   animation: appear 1s forwards;

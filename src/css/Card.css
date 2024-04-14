@@ -62,9 +62,6 @@
     }
 
     header {
-        /* --shape: polygon(5% 0, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%); */
-
-        /* --gradient: linear-gradient(to right, var(--color), #222 30%, #222 70%, var(--color) 100%); */
         --gradient: linear-gradient(to right, var(--color),  var(--color) 100%);
 
         display: grid;
