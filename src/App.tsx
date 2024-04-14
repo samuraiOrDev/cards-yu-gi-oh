@@ -1,32 +1,18 @@
 
-
-import { Card } from "./components/Card"
-import { cardsData } from "./data/data"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import "./css/Card.css"
+import Index from "./pages"
+import Card from "./pages/Card"
 
 function App() {
-  return (
-    <>
-      {
-        cardsData.map((card, index) => (
-          <Card
-            key={index}
-            start={card.start}
-            type={card.type}
-            name={card.name}
-            image={card.image}
-            description={card.description}
-            attribute={card.attribute}
-            attack={card.attack}
-            defense={card.defense}
-            typeClass={card.typeClass}
-            color={card.color}
-            fontSizeDescription={card.fontSizeDescription}
-          />
 
-        ))
-      }
-    </>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/card/:name" element={<Card />} />
+      </Routes>
+    </Router>
   )
 }
 

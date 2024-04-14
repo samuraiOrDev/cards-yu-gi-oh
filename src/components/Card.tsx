@@ -1,18 +1,33 @@
-import 'atropos/css'
+import { CSSProperties } from 'react';
+
+import { useNavigate } from "react-router-dom";
 import Atropos from 'atropos/react'
+import 'atropos/css'
+
 import { TypeCard } from "../data/data";
 
-export const Card = ({ attribute, image, name, start, attack, defense, description, typeClass, color, type, fontSizeDescription }: TypeCard) => {
+interface Props {
+    card: TypeCard
+    opacity: number
+}
+
+
+export const Card = ({ card, opacity }: Props) => {
+
+    const { attribute, image, name, start, attack, defense, preDescription, description, typeClass, color, type, fontSizeDescription } = card;
+    const navigate = useNavigate();
+    const handleClick = () => navigate(`/card/${name}`)
 
     return (
         <>
-            <Atropos>
+            <Atropos onClick={handleClick} >
                 <div className="card-container" style={{
                     '--color': color,
                     '--dark-color': `color-mix(in srgb, ${color}, black 50%)`,
-                    '--category-gradient': `linear-gradient(var(--dark-color), var(--color), var(--dark-color))`
-                } as React.CSSProperties}>
-                    {/* Header */}
+                    '--category-gradient': `linear-gradient(var(--dark-color), var(--color), var(--dark-color))`,
+                    opacity: opacity
+
+                } as CSSProperties} >
                     <header className="title">
                         <div className="text">
                             <h1>{name}</h1>
@@ -22,11 +37,9 @@ export const Card = ({ attribute, image, name, start, attack, defense, descripti
                             </div>
                         </div>
                     </header>
-                    {/* Imagen */}
                     <div className="image-container">
                         <img src={image} alt="Card Dark Magician" />
                     </div>
-                    {/* Description */}
                     {
                         type !== undefined && (
                             <header className="description">
@@ -49,20 +62,24 @@ export const Card = ({ attribute, image, name, start, attack, defense, descripti
                             </header>
                         )
                     }
-
-                    {/* Description Container */}
                     <div className="description-container">
                         <p style={{ fontSize: fontSizeDescription ? fontSizeDescription : "16px" }}>
+                            {
+                                preDescription && (
+                                    <>
+                                        <span>{preDescription}</span>
+                                        <br />
+                                    </>
+                                )
+
+                            }
                             {description}
                         </p>
                     </div>
-
-                    {/* Type Class */}
                     <div className="class-card">
                         {typeClass}
                     </div>
                 </div >
-
             </Atropos>
         </>
     )

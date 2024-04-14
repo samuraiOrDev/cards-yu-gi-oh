@@ -1,15 +1,15 @@
 :root {
   --bg-primary: #333;
-
   --color: rgb(202 138 4);
   --width: 390px;
-  --height: calc(var(--width) * 1.5); /* 550px */
-  --border-size: calc(var(--width) / 19.5); /* 20px */
-  
+  --height: calc(var(--width) * 1.5); 
+  --border-size: calc(var(--width) / 19.5); 
   --dark-color: color-mix(in srgb, var(--color), black 50%);
   --category-gradient: linear-gradient(var(--dark-color), var(--color), var(--dark-color));
   --noise: url("cards/textures/noise.webp");
   --bg-primary-url:url("/bg-primary.jpeg"), linear-gradient(#141414, #141414);
+  --bg-egipt: url("/bg-egipt.jpeg"), linear-gradient(#141414, #141414);
+  --bg-texture: url("/bg-texture.jpeg"), linear-gradient(#141414, #141414);
 
   
 }
@@ -17,14 +17,33 @@
 body {
   font-family: "Jost Variable", sans-serif;
   background: var(--bg-primary);
-  background-image: var(--bg-primary-url), linear-gradient(#141414, #141414);
+  background-image: var(--bg-egipt);
+  background-position: center;
   background-blend-mode: overlay, normal;
   background-clip: padding-box, border-box;
 }
-#root {
+
+.cards-yu-gi-oh {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+/* Animation */
+.appear {
+  animation: appear 1s forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
