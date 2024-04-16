@@ -6,15 +6,23 @@ interface Props {
     valueReal: string
 }
 export const ButtonSelector = ({ handleValueAndCards, valueState, valueReal }: Props) => {
-    console.log({ valueReal, valueState, color: Color[valueReal as keyof typeof Color] });
+    console.log({
+        color: Color[valueReal as keyof typeof Color],
+        valueState,
+        valueReal
+    })
+    const valueRealOrigin = valueReal
+    valueReal.startsWith("Synchro") && (valueReal = "Synchro");
+    valueReal.startsWith("Fusion") && (valueReal = "Fusion");
+
     return (
         <button
-            onClick={() => handleValueAndCards(valueReal)}
+            onClick={() => handleValueAndCards(valueRealOrigin)}
             className="item-selector"
             style={{
                 color: Color[valueReal as keyof typeof Color],
                 borderColor: Color[valueReal as keyof typeof Color],
-                ...(valueState === valueReal && { backgroundColor: Color[valueReal as keyof typeof Color], color: "#000" })
+                ...(valueState === valueRealOrigin && { backgroundColor: Color[valueReal as keyof typeof Color], color: "#000" })
             }}
         >
             {valueReal}

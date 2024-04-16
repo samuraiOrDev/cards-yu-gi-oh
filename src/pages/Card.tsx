@@ -7,7 +7,6 @@ useParams
 
 export default function Card() {
     const { name } = useParams();
-    console.log(name);
     const card = cardsData.filter(card => card.name === name)[0];
     return (
         <CardInfo {...card} />

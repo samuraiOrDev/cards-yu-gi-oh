@@ -20,11 +20,6 @@ export const SelectorClass = ({ handleCards }: Props) => {
             <ButtonSelector
                 handleValueAndCards={handleValueAndCards}
                 valueState={valueState}
-                valueReal={Type.All}
-            />
-            <ButtonSelector
-                handleValueAndCards={handleValueAndCards}
-                valueState={valueState}
                 valueReal={Type.Normal}
             />
             <ButtonSelector
@@ -37,6 +32,15 @@ export const SelectorClass = ({ handleCards }: Props) => {
                 valueState={valueState}
                 valueReal={Type.Ritual}
             />
+            <ButtonSelector
+                handleValueAndCards={handleValueAndCards}
+                valueState={valueState}
+                valueReal={Type.FusionEffect} />
+            <ButtonSelector
+                handleValueAndCards={handleValueAndCards}
+                valueState={valueState}
+                valueReal={Type.SynchroEffect} />
+
         </div >
     )
 }

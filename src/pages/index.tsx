@@ -5,7 +5,8 @@ import { Type, cardsData } from "../data/data";
 
 export default function Index() {
     const containerCardRef = useRef<HTMLDivElement>(null);
-    const [filteredCards, setFilteredCards] = useState(cardsData);
+    const cardsDataOrderByStars = cardsData.sort((a, b) => (a.start as number) - (b.start as number));
+    const [filteredCards, setFilteredCards] = useState(cardsDataOrderByStars);
 
 
     const handleCards = (value: string) =>
