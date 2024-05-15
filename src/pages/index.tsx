@@ -13,8 +13,6 @@ export default function Index() {
         (value === Type.All)
             ? setFilteredCards(cardsData)
             : setFilteredCards(cardsData.filter(card => card.typeClass === value));
-
-
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {

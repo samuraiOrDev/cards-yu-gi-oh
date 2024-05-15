@@ -1,6 +1,6 @@
 :root {
   --bg-primary: #333;
-  --color: rgb(202 138 4);
+  --color: #ca8a04;
   --width: 390px;
   --height: calc(var(--width) * 1.5); 
   --border-size: calc(var(--width) / 19.5); 
